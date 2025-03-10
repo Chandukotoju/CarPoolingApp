@@ -19,7 +19,7 @@ const CreatePlan = () => {
     const fetchDetails=async()=>{
         try{
             const token=localStorage.getItem("token")
-            const response= await axios.get("http://localhost:3000/vehicle/getVehcles",{
+            const response= await axios.get("https://carpooling-backend-hemq.onrender.com/vehicle/getVehcles",{
                 headers: {
                   Authorization: `Bearer ${token}`,
                 },
@@ -60,7 +60,7 @@ const CreatePlan = () => {
 
     try {
       const token = localStorage.getItem("token"); 
-      await axios.post("http://localhost:3000/travel/create", plan, {
+      await axios.post("https://carpooling-backend-hemq.onrender.com/travel/create", plan, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

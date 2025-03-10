@@ -9,7 +9,7 @@ const PassengerBookings = () => {
     const fetchBookings = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:3000/travel/getBookings", {
+        const response = await axios.get("https://carpooling-backend-hemq.onrender.com/travel/getBookings", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setBookings(response.data.bookings);
@@ -28,7 +28,7 @@ const PassengerBookings = () => {
       const token = localStorage.getItem("token");
       
       await axios.post(
-        "http://localhost:3000/travel/cancel",
+        "https://carpooling-backend-hemq.onrender.com/travel/cancel",
         { travelId, seatsToCancel },
         { headers: { Authorization: `Bearer ${token}` } }
       );

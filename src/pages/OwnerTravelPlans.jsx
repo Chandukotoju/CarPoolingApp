@@ -13,11 +13,11 @@ const OwnerTravelPlans = () => {
   const fetchTravelPlans = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:3000/travel/plans", {
+      const response = await axios.get("https://carpooling-backend-hemq.onrender.com/travel/plans", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPlans(response.data.travelPlans);
-      console.log(plans)
+      
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +26,7 @@ const OwnerTravelPlans = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:3000/travel/delete/${id}`, {
+      await axios.delete(`https://carpooling-backend-hemq.onrender.com/travel/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPlans(plans.filter((plan) => plan._id !== id)); // Remove from UI
@@ -48,7 +48,7 @@ const OwnerTravelPlans = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:3000/travel/update/${updatedPlan._id}`,
+        `https://carpooling-backend-hemq.onrender.com/travel/update/${updatedPlan._id}`,
         updatedPlan,
         { headers: { Authorization: `Bearer ${token}` } }
       );

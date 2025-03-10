@@ -14,7 +14,7 @@ const PassengerDashboard = () => {
     const fetchTravelPlans = async () => {
       try {
         const token = localStorage.getItem("token"); // Retrieve token from local storage
-        const response = await axios.get("http://localhost:3000/travel/getAllPlans", {
+        const response = await axios.get("https://carpooling-backend-hemq.onrender.com/travel/getAllPlans", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

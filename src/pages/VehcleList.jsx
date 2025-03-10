@@ -8,7 +8,7 @@ const VehcleList = () => {
         const fetchDetails=async()=>{
             try{
                 const token=localStorage.getItem("token")
-                const response= await axios.get("http://localhost:3000/vehicle/getVehcles",{
+                const response= await axios.get("https://carpooling-backend-hemq.onrender.com/vehicle/getVehcles",{
                     headers: {
                       Authorization: `Bearer ${token}`,
                     },

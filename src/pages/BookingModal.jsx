@@ -16,7 +16,7 @@ const BookingModal = ({ isOpen, onClose, travelPlan }) => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        `http://localhost:3000/travel/book`,
+        `https://carpooling-backend-hemq.onrender.com/travel/book`,
         { seatsToBook: seats,travelId:travelPlan._id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
