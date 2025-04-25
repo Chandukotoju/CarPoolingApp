@@ -11,7 +11,8 @@ const VehcleRegister = () => {
       e.preventDefault() 
       try{
         const token=localStorage.getItem("token");
-        const response= await axios.post("https://carpooling-backend-hemq.onrender.com/vehicle/register",vehcle,{headers:{Authorization:`Bearer ${token}`}}) 
+        const response= await axios.post("https://carpooling-backend-1.onrender.com/vehicle/register",vehcle,{headers:{Authorization:`Bearer ${token}`}})
+        alert("vehcle registered successfully") 
         setVehcle({vehcleNumber:"",vehcleModel:"",noOfSeats:"",pricePerSeat:""})
       }catch(error){
          console.log(error)

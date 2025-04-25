@@ -14,7 +14,8 @@ const SignUp = ()=> {
         e.preventDefault() 
         try{ 
             
-            const response=await axios.post("https://carpooling-backend-hemq.onrender.com/user/signup",{fullname,email,password,role}) 
+            const response=await axios.post("https://carpooling-backend-1.onrender.com/user/signup",{fullname,email,password,role}) 
+            console.log(response)
             
             navigate("/login")
         }catch(error){

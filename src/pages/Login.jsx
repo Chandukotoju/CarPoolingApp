@@ -10,10 +10,12 @@ const Login = () => {
     const handleSubmit=async(e)=>{
         e.preventDefault() 
         try{
-             const response=await axios.post("https://carpooling-backend-hemq.onrender.com/user/login",{email,password}) 
-             localStorage.setItem("token",response.data.token)
+             const response=await axios.post("https://carpooling-backend-1.onrender.com/user/login",{email,password})  
+             console.log(response)
+             localStorage.setItem("token",response.data.token) 
+             console.log(response.data.token)
              localStorage.setItem("userRole",response.data.user.role)
-             const role=response.data.user.role;
+             
              
              navigate("/")
             //  if (role === "owner") {
